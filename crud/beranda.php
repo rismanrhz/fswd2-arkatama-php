@@ -1,3 +1,14 @@
+<?php 
+    
+    session_start();
+
+    // Pengecekan sesi
+    if (!isset($_SESSION['isLoggedIn'])) {
+        header("Location: login.php");
+        exit();
+    }
+ 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +21,7 @@
 <body>
     <div class="container-fluid">
     <a href="create.php" class="btn btn-primary mt-3 mb-3">Tambah</a>
+    <a href="logout.php" class="btn btn-secondary mt-3 mb-3">Logout</a>
         <table class="table">
             <thead>
                 <tr class="table-primary">
